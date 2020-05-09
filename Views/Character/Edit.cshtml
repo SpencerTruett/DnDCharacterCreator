@@ -4,33 +4,17 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+    <h1>Edit @Html.DisplayFor(model => model.CharacterName)</h1>
 
-<h4>Character</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Id" class="control-label"></label>
-                <input asp-for="Id" class="form-control" />
-                <span asp-validation-for="Id" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ApplicationUserId" class="control-label"></label>
-                <input asp-for="ApplicationUserId" class="form-control" />
-                <span asp-validation-for="ApplicationUserId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CharacterName" class="control-label"></label>
+                <label asp-for="CharacterName" class="control-label">Character Name</label>
                 <input asp-for="CharacterName" class="form-control" />
                 <span asp-validation-for="CharacterName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PlayerName" class="control-label"></label>
-                <input asp-for="PlayerName" class="form-control" />
-                <span asp-validation-for="PlayerName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Class" class="control-label"></label>
@@ -53,22 +37,22 @@
                 <span asp-validation-for="Experience" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="MaxHp" class="control-label"></label>
+                <label asp-for="MaxHp" class="control-label">Max HP</label>
                 <input asp-for="MaxHp" class="form-control" />
                 <span asp-validation-for="MaxHp" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CurrentHp" class="control-label"></label>
+                <label asp-for="CurrentHp" class="control-label">Current HP</label>
                 <input asp-for="CurrentHp" class="form-control" />
                 <span asp-validation-for="CurrentHp" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="HitDice" class="control-label"></label>
+                <label asp-for="HitDice" class="control-label">Hit Dice</label>
                 <input asp-for="HitDice" class="form-control" />
                 <span asp-validation-for="HitDice" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ArmorClass" class="control-label"></label>
+                <label asp-for="ArmorClass" class="control-label">Armor Class</label>
                 <input asp-for="ArmorClass" class="form-control" />
                 <span asp-validation-for="ArmorClass" class="text-danger"></span>
             </div>
@@ -103,7 +87,7 @@
                 <span asp-validation-for="Charisma" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ProficiencyBounus" class="control-label"></label>
+                <label asp-for="ProficiencyBounus" class="control-label">Proficiency Bonus</label>
                 <input asp-for="ProficiencyBounus" class="form-control" />
                 <span asp-validation-for="ProficiencyBounus" class="text-danger"></span>
             </div>
@@ -128,7 +112,7 @@
                 <span asp-validation-for="Speed" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="SavingThrows" class="control-label"></label>
+                <label asp-for="SavingThrows" class="control-label">Saving Throws</label>
                 <input asp-for="SavingThrows" class="form-control" />
                 <span asp-validation-for="SavingThrows" class="text-danger"></span>
             </div>

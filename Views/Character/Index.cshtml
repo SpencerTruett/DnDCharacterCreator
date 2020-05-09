@@ -4,25 +4,16 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>My Characters</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Create a New Characcter</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApplicationUserId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CharacterName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PlayerName)
+                Character Name
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Class)
@@ -34,58 +25,37 @@
                 @Html.DisplayNameFor(model => model.Level)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Experience)
+                Exp.
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MaxHp)
+                Max HP
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CurrentHp)
+                Current HP
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.HitDice)
+                Hit Dice
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ArmorClass)
+                AC
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Strength)
+                STR
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Dexterity)
+                DEX
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Constitution)
+                CON
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Intelligence)
+                INT
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Wisdom)
+                WIS
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Charisma)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProficiencyBounus)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Spells)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Inventory)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Proficiencies)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Speed)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SavingThrows)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Skills)
+                CHA
             </th>
             <th></th>
         </tr>
@@ -94,16 +64,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApplicationUserId)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.CharacterName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlayerName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Class)
@@ -148,30 +109,9 @@
                 @Html.DisplayFor(modelItem => item.Charisma)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ProficiencyBounus)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Spells)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Inventory)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Proficiencies)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Speed)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SavingThrows)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Skills)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
             </td>
         </tr>
 }
