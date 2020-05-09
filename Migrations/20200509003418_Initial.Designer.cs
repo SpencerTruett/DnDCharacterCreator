@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DnDCharacterCreator.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200509001707_Initial")]
+    [Migration("20200509003418_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -98,7 +98,7 @@ namespace DnDCharacterCreator.Migrations
                         {
                             Id = "00000000-ffff-ffff-ffff-ffffffffffff",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e0222998-f67a-4dd2-98c2-a317cebeac65",
+                            ConcurrencyStamp = "583203bc-9b18-48ad-84a0-2f501d4197b8",
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             FirstName = "Admina",
@@ -106,7 +106,7 @@ namespace DnDCharacterCreator.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
                             NormalizedUserName = "ADMIN@ADMIN.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEEmTVdRfSY3OKqemQNcayGY/BMyikQvyMSoahZb4STwKzv7yfYnbkWz5RONS3HX8+w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHGvpjJkWdzdQ/dGVN22xvtAQ6GvvK5SHiAHFAZH9X7MHgf/23yT3oVAMMrhiPI4vQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "7f434309-a4d9-48e9-9ebb-8803db794577",
                             TwoFactorEnabled = false,
@@ -120,6 +120,9 @@ namespace DnDCharacterCreator.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ApplicationUserId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("ArmorClass")
                         .HasColumnType("int");
@@ -191,6 +194,8 @@ namespace DnDCharacterCreator.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ApplicationUserId");
 
                     b.ToTable("Character");
                 });
@@ -328,6 +333,13 @@ namespace DnDCharacterCreator.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("DnDCharacterCreator.Models.Character", b =>
+                {
+                    b.HasOne("DnDCharacterCreator.Models.ApplicationUser", "ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("ApplicationUserId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

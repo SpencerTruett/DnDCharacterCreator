@@ -8,6 +8,8 @@ namespace DnDCharacterCreator.Models
     public class Character
     {
         public int Id { get; set; }
+        public string ApplicationUserId { get; set; }
+        public ApplicationUser ApplicationUser { get; set; }
         public string CharacterName { get; set; }
         public string PlayerName { get; set; }
         public string Class { get; set; }

@@ -49,41 +49,6 @@ namespace DnDCharacterCreator.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Character",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CharacterName = table.Column<string>(nullable: true),
-                    PlayerName = table.Column<string>(nullable: true),
-                    Class = table.Column<string>(nullable: true),
-                    Race = table.Column<string>(nullable: true),
-                    Level = table.Column<int>(nullable: false),
-                    Experience = table.Column<double>(nullable: false),
-                    MaxHp = table.Column<int>(nullable: false),
-                    CurrentHp = table.Column<int>(nullable: false),
-                    HitDice = table.Column<string>(nullable: true),
-                    ArmorClass = table.Column<int>(nullable: false),
-                    Strength = table.Column<int>(nullable: false),
-                    Dexterity = table.Column<int>(nullable: false),
-                    Constitution = table.Column<int>(nullable: false),
-                    Intelligence = table.Column<int>(nullable: false),
-                    Wisdom = table.Column<int>(nullable: false),
-                    Charisma = table.Column<int>(nullable: false),
-                    ProficiencyBounus = table.Column<int>(nullable: false),
-                    Spells = table.Column<string>(nullable: true),
-                    Inventory = table.Column<string>(nullable: true),
-                    Proficiencies = table.Column<string>(nullable: true),
-                    Speed = table.Column<int>(nullable: false),
-                    SavingThrows = table.Column<string>(nullable: true),
-                    Skills = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Character", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -189,10 +154,52 @@ namespace DnDCharacterCreator.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Character",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ApplicationUserId = table.Column<string>(nullable: true),
+                    CharacterName = table.Column<string>(nullable: true),
+                    PlayerName = table.Column<string>(nullable: true),
+                    Class = table.Column<string>(nullable: true),
+                    Race = table.Column<string>(nullable: true),
+                    Level = table.Column<int>(nullable: false),
+                    Experience = table.Column<double>(nullable: false),
+                    MaxHp = table.Column<int>(nullable: false),
+                    CurrentHp = table.Column<int>(nullable: false),
+                    HitDice = table.Column<string>(nullable: true),
+                    ArmorClass = table.Column<int>(nullable: false),
+                    Strength = table.Column<int>(nullable: false),
+                    Dexterity = table.Column<int>(nullable: false),
+                    Constitution = table.Column<int>(nullable: false),
+                    Intelligence = table.Column<int>(nullable: false),
+                    Wisdom = table.Column<int>(nullable: false),
+                    Charisma = table.Column<int>(nullable: false),
+                    ProficiencyBounus = table.Column<int>(nullable: false),
+                    Spells = table.Column<string>(nullable: true),
+                    Inventory = table.Column<string>(nullable: true),
+                    Proficiencies = table.Column<string>(nullable: true),
+                    Speed = table.Column<int>(nullable: false),
+                    SavingThrows = table.Column<string>(nullable: true),
+                    Skills = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Character", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Character_AspNetUsers_ApplicationUserId",
+                        column: x => x.ApplicationUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "00000000-ffff-ffff-ffff-ffffffffffff", 0, "e0222998-f67a-4dd2-98c2-a317cebeac65", "admin@admin.com", true, "Admina", "Straytor", false, null, "ADMIN@ADMIN.COM", "ADMIN@ADMIN.COM", "AQAAAAEAACcQAAAAEEmTVdRfSY3OKqemQNcayGY/BMyikQvyMSoahZb4STwKzv7yfYnbkWz5RONS3HX8+w==", null, false, "7f434309-a4d9-48e9-9ebb-8803db794577", false, "admin@admin.com" });
+                values: new object[] { "00000000-ffff-ffff-ffff-ffffffffffff", 0, "583203bc-9b18-48ad-84a0-2f501d4197b8", "admin@admin.com", true, "Admina", "Straytor", false, null, "ADMIN@ADMIN.COM", "ADMIN@ADMIN.COM", "AQAAAAEAACcQAAAAEHGvpjJkWdzdQ/dGVN22xvtAQ6GvvK5SHiAHFAZH9X7MHgf/23yT3oVAMMrhiPI4vQ==", null, false, "7f434309-a4d9-48e9-9ebb-8803db794577", false, "admin@admin.com" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -232,6 +239,11 @@ namespace DnDCharacterCreator.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Character_ApplicationUserId",
+                table: "Character",
+                column: "ApplicationUserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
