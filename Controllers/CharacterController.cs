@@ -84,7 +84,9 @@ namespace Capstone.controllers
                     Proficiencies = character.Proficiencies,
                     Speed = character.Speed,
                     SavingThrows = character.SavingThrows,
-                    Skills = character.Skills
+                    Skills = character.Skills,
+                    Feats = character.Feats,
+                    Notes = character.Notes
                 };
 
                 characterinstance.ApplicationUserId = user.Id;
