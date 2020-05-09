@@ -4,14 +4,16 @@ using DnDCharacterCreator.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DnDCharacterCreator.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200509021747_Notes")]
+    partial class Notes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -96,7 +98,7 @@ namespace DnDCharacterCreator.Migrations
                         {
                             Id = "00000000-ffff-ffff-ffff-ffffffffffff",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9fc0063a-ba45-4e40-bc55-e51750d256ee",
+                            ConcurrencyStamp = "154f3c58-2e1c-40ca-a83e-f2fc9731407a",
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             FirstName = "Admina",
@@ -104,7 +106,7 @@ namespace DnDCharacterCreator.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
                             NormalizedUserName = "ADMIN@ADMIN.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIwzgax92dq9kvkA01AT7eYAhfpxl/zGqTypW+qImPKjWaxVxMxWLc8zUOW1GLWNTQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAED9uc7GRQQjnlJqP2LWo1JD20exfl3yrBmYoMTvomL3nM5MKhOuCKUkU6kCp9tmhIA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "7f434309-a4d9-48e9-9ebb-8803db794577",
                             TwoFactorEnabled = false,
@@ -145,9 +147,6 @@ namespace DnDCharacterCreator.Migrations
 
                     b.Property<double>("Experience")
                         .HasColumnType("float");
-
-                    b.Property<string>("Feats")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("HitDice")
                         .HasColumnType("nvarchar(max)");

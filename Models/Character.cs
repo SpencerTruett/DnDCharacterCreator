@@ -33,5 +33,7 @@ namespace DnDCharacterCreator.Models
         public int Speed { get; set; }
         public string SavingThrows { get; set; }
         public string Skills { get; set; }
+        public string Feats { get; set; }
+        public string Notes { get; set; }
     }
 }
