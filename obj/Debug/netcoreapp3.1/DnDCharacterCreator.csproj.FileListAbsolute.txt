@@ -151,9 +151,6 @@ C:\Users\gilde\workspace\csharp\DnDCharacterCreator\bin\Debug\netcoreapp3.1\ru\M
 C:\Users\gilde\workspace\csharp\DnDCharacterCreator\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\gilde\workspace\csharp\DnDCharacterCreator\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\gilde\workspace\csharp\DnDCharacterCreator\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\gilde\workspace\csharp\DnDCharacterCreator\obj\Debug\netcoreapp3.1\DnDCharacterCreator.csproj.CoreCompileInputs.cache
-C:\Users\gilde\workspace\csharp\DnDCharacterCreator\obj\Debug\netcoreapp3.1\DnDCharacterCreator.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\gilde\workspace\csharp\DnDCharacterCreator\obj\Debug\netcoreapp3.1\DnDCharacterCreator.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\gilde\workspace\csharp\DnDCharacterCreator\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
 C:\Users\gilde\workspace\csharp\DnDCharacterCreator\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
 C:\Users\gilde\workspace\csharp\DnDCharacterCreator\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
@@ -164,3 +161,6 @@ C:\Users\gilde\workspace\csharp\DnDCharacterCreator\obj\Debug\netcoreapp3.1\Razo
 C:\Users\gilde\workspace\csharp\DnDCharacterCreator\obj\Debug\netcoreapp3.1\Razor\Views\Character\Details.cshtml.g.cs
 C:\Users\gilde\workspace\csharp\DnDCharacterCreator\obj\Debug\netcoreapp3.1\Razor\Views\Character\Edit.cshtml.g.cs
 C:\Users\gilde\workspace\csharp\DnDCharacterCreator\obj\Debug\netcoreapp3.1\Razor\Views\Character\Index.cshtml.g.cs
+C:\Users\gilde\workspace\csharp\DnDCharacterCreator\obj\Debug\netcoreapp3.1\DnDCharacterCreator.csproj.CoreCompileInputs.cache
+C:\Users\gilde\workspace\csharp\DnDCharacterCreator\obj\Debug\netcoreapp3.1\DnDCharacterCreator.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\gilde\workspace\csharp\DnDCharacterCreator\obj\Debug\netcoreapp3.1\DnDCharacterCreator.MvcApplicationPartsAssemblyInfo.cache
