@@ -4,18 +4,12 @@
     ViewData["Title"] = "Details";
 }
 
-    <h1>@Html.DisplayFor(model => model.CharacterName)'s Details</h1>
+    <h1>@Html.DisplayFor(model => model.CharacterName)</h1>
     <a asp-action="Index">Back to List</a>
 
     <div>
         <hr />
         <dl class="row">
-            <dt class="col-sm-2">
-                Character Name
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.CharacterName)
-            </dd>
             <dt class="col-sm-2">
                 @Html.DisplayNameFor(model => model.Class)
             </dt>
