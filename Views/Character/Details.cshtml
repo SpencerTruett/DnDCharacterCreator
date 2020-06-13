@@ -112,9 +112,29 @@
         <dt class="col-sm-2">
             Proficiency Bonus
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-4">
             @Html.DisplayFor(model => model.ProficiencyBounus)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Proficiencies)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.Proficiencies)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Speed)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.Speed)
+        </dd>
+        <dt class="col-sm-2">
+            Saving Throws
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.SavingThrows)
+        </dd>
+    </dl>
+    <dl class="row">
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Spells)
         </dt>
@@ -126,24 +146,6 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Inventory)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Proficiencies)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Proficiencies)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Speed)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Speed)
-        </dd>
-        <dt class="col-sm-2">
-            Saving Throws
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SavingThrows)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Skills)
