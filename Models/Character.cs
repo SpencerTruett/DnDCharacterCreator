@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -35,5 +36,7 @@ namespace DnDCharacterCreator.Models
         public string Skills { get; set; }
         public string Feats { get; set; }
         public string Notes { get; set; }
+        public string ImagePath { get; set; }
+        public IFormFile ImageFile { get; set; }
     }
 }

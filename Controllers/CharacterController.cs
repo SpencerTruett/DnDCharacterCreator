@@ -91,6 +91,16 @@ namespace Capstone.controllers
 
                 characterinstance.ApplicationUserId = user.Id;
 
+                var uploadPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\images");
+                if (character.ImageFile != null)
+                {
+                    var fileName = Guid.NewGuid().ToString() + character.ImageFile.FileName;
+                    character.ImagePath = fileName;
+                    using (var fileStream = new FileStream(Path.Combine(uploadPath, fileName), FileMode.Create))
+                    {
+                        await character.ImageFile.CopyToAsync(fileStream);
+                    }
+                }
 
                 _context.Character.Add(characterinstance);
                 await _context.SaveChangesAsync();
