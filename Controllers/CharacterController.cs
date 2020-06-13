@@ -12,6 +12,7 @@ using System.Runtime.InteropServices.ComTypes;
 using System.IO;
 using DnDCharacterCreator.Data;
 using DnDCharacterCreator.Models;
+using DnDCharacterCreator.Models.ViewModels;
 
 namespace Capstone.controllers
 {
@@ -54,7 +55,7 @@ namespace Capstone.controllers
         // post: character/create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create(Character character)
+        public async Task<ActionResult> Create(CharacterDetailViewModel characterDetailViewModel)
         {
             try
             {
@@ -62,43 +63,43 @@ namespace Capstone.controllers
 
                 var characterinstance = new Character
                 {
-                    CharacterName = character.CharacterName,
-                    PlayerName = character.PlayerName,
-                    Class = character.Class,
-                    Race = character.Race,
-                    Level = character.Level,
-                    Experience = character.Experience,
-                    MaxHp = character.MaxHp,
-                    CurrentHp = character.CurrentHp,
-                    HitDice = character.HitDice,
-                    ArmorClass = character.ArmorClass,
-                    Strength = character.Strength,
-                    Dexterity = character.Dexterity,
-                    Constitution = character.Constitution,
-                    Intelligence = character.Intelligence,
-                    Wisdom = character.Wisdom,
-                    Charisma = character.Charisma,
-                    ProficiencyBounus = character.ProficiencyBounus,
-                    Spells = character.Spells,
-                    Inventory = character.Inventory,
-                    Proficiencies = character.Proficiencies,
-                    Speed = character.Speed,
-                    SavingThrows = character.SavingThrows,
-                    Skills = character.Skills,
-                    Feats = character.Feats,
-                    Notes = character.Notes
+                    CharacterName = characterDetailViewModel.Character.CharacterName,
+                    PlayerName = characterDetailViewModel.Character.PlayerName,
+                    Class = characterDetailViewModel.Character.Class,
+                    Race = characterDetailViewModel.Character.Race,
+                    Level = characterDetailViewModel.Character.Level,
+                    Experience = characterDetailViewModel.Character.Experience,
+                    MaxHp = characterDetailViewModel.Character.MaxHp,
+                    CurrentHp = characterDetailViewModel.Character.CurrentHp,
+                    HitDice = characterDetailViewModel.Character.HitDice,
+                    ArmorClass = characterDetailViewModel.Character.ArmorClass,
+                    Strength = characterDetailViewModel.Character.Strength,
+                    Dexterity = characterDetailViewModel.Character.Dexterity,
+                    Constitution = characterDetailViewModel.Character.Constitution,
+                    Intelligence = characterDetailViewModel.Character.Intelligence,
+                    Wisdom = characterDetailViewModel.Character.Wisdom,
+                    Charisma = characterDetailViewModel.Character.Charisma,
+                    ProficiencyBounus = characterDetailViewModel.Character.ProficiencyBounus,
+                    Spells = characterDetailViewModel.Character.Spells,
+                    Inventory = characterDetailViewModel.Character.Inventory,
+                    Proficiencies = characterDetailViewModel.Character.Proficiencies,
+                    Speed = characterDetailViewModel.Character.Speed,
+                    SavingThrows = characterDetailViewModel.Character.SavingThrows,
+                    Skills = characterDetailViewModel.Character.Skills,
+                    Feats = characterDetailViewModel.Character.Feats,
+                    Notes = characterDetailViewModel.Character.Notes
                 };
 
                 characterinstance.ApplicationUserId = user.Id;
 
                 var uploadPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\images");
-                if (character.ImageFile != null)
+                if (characterDetailViewModel.ImageFile != null)
                 {
-                    var fileName = Guid.NewGuid().ToString() + character.ImageFile.FileName;
-                    character.ImagePath = fileName;
+                    var fileName = Guid.NewGuid().ToString() + characterDetailViewModel.ImageFile.FileName;
+                    characterDetailViewModel.ImagePath = fileName;
                     using (var fileStream = new FileStream(Path.Combine(uploadPath, fileName), FileMode.Create))
                     {
-                        await character.ImageFile.CopyToAsync(fileStream);
+                        await characterDetailViewModel.ImageFile.CopyToAsync(fileStream);
                     }
                 }
 
